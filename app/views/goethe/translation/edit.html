@@ -1,0 +1,41 @@
+<div class="page page-form">
+
+
+    <div class="row ui-section"  data-ng-controller="translation-edit" ng-cloak>
+        <div class="col-lg-8 clearfix">
+            <h2 ng-show="!translation.id" class="section-header">Nueva Entrada</h2>
+            <h2 ng-show="translation.id" class="section-header">Editar Entrada</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form name="translation_form" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="">Código</label>
+                            <input type="text" class="form-control" required data-ng-model="translation.key"/>
+                        </div>
+
+                        <div class="form-group" ng-repeat="language in languages">
+                            <label for="">{{language.name}}</label>
+                            <textarea class="form-control" rows="5" data-ng-model="translation[language.iso_code]"></textarea>
+                        </div>
+
+
+                        <button type="submit"
+                                ui-wave
+                                class="btn btn-primary btn-w-md"
+                                data-ng-disabled="!canSubmit()"
+                                >Guardar</button>
+                        <button class="btn btn-default btn-w-md"
+                                ui-wave
+                                data-ng-click="revert()"
+                        >Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
