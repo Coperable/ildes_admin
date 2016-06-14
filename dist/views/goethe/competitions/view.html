@@ -3,7 +3,7 @@
     <header class="profile-header">
         <div class="row">
             <ul class="list-inline">
-                <li><a ui-sref="region-view({regionId: competition.region.id})">{{competition.region.name}}</a></li> > 
+                <li><a ui-sref="competition-view({competitionId: competition.competition.id})">{{competition.competition.name}}</a></li> > 
                 <li>{{competition.title}}</li>
             </ul>
             <span class="btn btn-danger pull-right" ng-click="edit(competition.id)">Editar</span>
@@ -19,7 +19,7 @@
 
         <div class="profile-info">
             <ul class="list-unstyled list-inline">
-                <li><span class="btn" ng-click="showParticipants()"><i class="fa fa-users"></i> Oradores<span class="text-muted">({{competition.users.length}})</span></span></li>
+                <!--li><span class="btn" ng-click="showParticipants()"><i class="fa fa-users"></i> Oradores<span class="text-muted">({{competition.users.length}})</span></span></li-->
                 <!--li><span class="btn" ng-click="showVideos()"><i class="fa fa-video-camera"></i> Videos <span class="text-muted">({{competition.videos.length}})</span></span></li>
                 <li><span class="btn" ng-click="showCups()"><i class="fa fa-bookmark"></i> Copas y Menciones </span> </li-->
             </ul>
@@ -28,93 +28,6 @@
 
 
     <div class="panel panel-default" data-ng-controller="competition-participants" data-ng-if="show_participants">
-        <div class="panel-header">
-            <h2 class="section-header">Oradores</h2>
-            <span class="btn btn-primary pull-right" ng-click="addParticipant()" ng-hide="adding">Agregar</span>
-        </div>
-        <div class="panel-body">
-            <div class="row mb20" ng-show="adding">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-4 col-lg-4" ng-repeat="candidate in candidates">
-                           <div class="card bg-white">
-                                <div class="card-image">
-                                    <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{candidate.cover_photo}}" class="img-rounded img-responsive">
-                                    <span class="card-title text-primary" >{{candidate.name}} {{candidate.lastname}}</span>
-                                </div>
-                                <div class="card-content">
-                                    <p>{{candidate.place}}</p>
-                                </div>
-                                <div class="card-action">
-                                    <span class="btn btn-primary block-center" ng-click="assign(candidate)">Agregar</span>
-                                </div>
-                            </div>
-
-             
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <span class="btn btn-secondary" ng-click="cancelAdding()">Close</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table table-bordered table-striped table-responsive">
-                        <thead>
-                            <tr>
-                                <th><div class="th">
-                                    Apellido - Nombre
-                                </div></th>
-                                <th><div class="th">
-                                    Lugar    
-                                </div></th>
-                                <th><div class="th">
-                                </div></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-ng-repeat="participant in participants">
-                                <td>{{participant.lastname}} {{participant.name}}</td>
-                                <td>{{participant.place}}</td>
-                                <td></td>
-                                <td><span class="btn btn-primary" ng-click="viewParticipant(participant.id)">Ver</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <footer class="table-footer">
-                        <div class="row">
-                            <div class="col-md-6 page-num-info">
-                                <span>
-                                    Show 
-                                    <select data-ng-model="numPerPage"
-                                            data-ng-options="num for num in numPerPageOpt"
-                                            data-ng-change="onNumPerPageChange()">
-                                    </select> 
-                                    entries per page
-                                </span>
-                            </div>
-                            <div class="col-md-6 text-right pagination-container">
-                                <pagination class="pagination-sm"
-                                            ng-model="currentPage"
-                                            total-items="filteredStores.length"
-                                            max-size="4"
-                                            ng-change="select(currentPage)"
-                                            items-per-page="numPerPage"
-                                            rotate="false"
-                                            previous-text="&lsaquo;" next-text="&rsaquo;"
-                                            boundary-links="true"></pagination>
-                            </div>
-                        </div>
-                    </footer>
-                </div>
-            </div>
-
-
-        </div>
     </div>
  
 

@@ -8,10 +8,12 @@
             <span data-translate="NAVIGATION"></span>
         </li>
         <li ui-wave><a href="#/dashboard"> <i class="imd imd-home"></i><span data-translate="Home"></span> </a></li>
-        <li ng-if="hasRole('create_region')" ui-wave><a href="#/goethe/regions/list"> <i class="imd imd-place"></i><span data-translate="Espacios"></span> </a></li>
         <li ng-if="hasRole('crud_user')" ui-wave><a href="#/goethe/users/list"> <i class="imd imd-contacts"></i><span data-translate="Usuarios"></span> </a></li>
-        <li ng-if="hasRole('crud_user')" ui-wave><a href="#/goethe/participants/list"> <i class="imd imd-contacts"></i><span data-translate="Oradores"></span> </a></li>
-        <li ui-wave ng-repeat="region in account.regions"><a ng-click="viewRegion(region.id)"> <i class="imd imd-place"></i><span> {{region.name}}</span> </a></li>
+
+        <li ng-if="hasRole('crud_user')" ui-wave><a href="#/goethe/participants/list"> <i class="imd imd-contacts"></i><span data-translate="Equipo"></span> </a></li>
+        <li ng-if="hasRole('create_region')" ui-wave><a href="#/goethe/competitions/list"> <i class="imd imd-place"></i><span data-translate="Proyectos"></span> </a></li>
+        <!--li ui-wave ng-repeat="region in account.regions"><a ng-click="viewRegion(region.id)"> <i class="imd imd-place"></i><span> {{region.name}}</span> </a></li-->
+
         <li ng-if="hasRole('edit_site')" ui-wave><a href="#/goethe/sliders/list"> <i class="imd imd-contacts"></i><span data-translate="Sliders"></span> </a></li>
         <li ng-if="hasRole('crud_user')" ui-wave><a href="#/goethe/translation/list"> <i class="imd imd-spellcheck"></i><span data-translate="Traducciones"></span> </a></li>
     </ul>

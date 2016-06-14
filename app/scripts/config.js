@@ -2,7 +2,7 @@
 
 angular.module('config', [])
 
-.constant('api_host', 'http://ildes.app')
+.constant('api_host', 'http://ildes.coperable.org')
 
 .value('debug', true)
 

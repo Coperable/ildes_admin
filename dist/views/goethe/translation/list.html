@@ -1,9 +1,9 @@
-<div class="page page-table" data-ng-controller="sliders-list">
+<div class="page page-table" data-ng-controller="translation-list">
 
     <div class="row ui-section">
         <div class="col-lg-8 clearfix">
-            <h2 class="section-header">Sliders</h2>
-            <a ui-sref="slider-new" class="btn btn-danger pull-right">Crear</a>
+            <h2 class="section-header">Entradas</h2>
+            <a ui-sref="translation-new" class="btn btn-danger pull-right">Crear</a>
         </div>
         <div class="col-md-12">
             <section class="panel panel-default table-dynamic">
@@ -12,22 +12,20 @@
                     <thead>
                         <tr>
                             <th><div class="th">
-                                Titulo
+                                Código 
                             </div></th>
                             <th><div class="th">
-                                Tipo
                             </div></th>
                             <th><div class="th">
                             </div></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-ng-repeat="slider in sliders" style="color:{{slider.color}}" >
-                            <td>{{slider.title}}</td>
-                            <td>{{slider.type}}</td>
+                        <tr data-ng-repeat="entry in translations" >
+                            <td>{{entry.key}}</td>
                             <td>
-                                <span class="btn btn-default" ng-click="edit(slider.id)">Editar</span>
-                                <span class="btn btn-danger" ng-click="remove(slider)">Eliminar</span>
+                                <span class="btn btn-default" ng-click="edit(entry.id)">Editar</span>
+                                <span class="btn btn-danger" ng-click="remove(entry)">Eliminar</span>
                             </td>
                         </tr>
                     </tbody>

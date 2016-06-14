@@ -3,8 +3,8 @@
 
     <div class="row ui-section"  data-ng-controller="competition-edit" ng-cloak>
         <div class="col-lg-8 clearfix">
-            <h2 ng-show="!torneo.id" class="section-header">Nueva Actividad</h2>
-            <h2 ng-show="torneo.id" class="section-header">Edición Actividad</h2>
+            <h2 ng-show="!torneo.id" class="section-header">Nuevo Proyecto</h2>
+            <h2 ng-show="torneo.id" class="section-header">Edición Proyecto</h2>
         </div>
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -14,15 +14,13 @@
                             <label for="">Título</label>
                             <input  type="text" class="form-control" placeholder="Título" required data-ng-model="torneo.title" >
                             <input  type="text" class="form-control" placeholder="ENGLISH" required data-ng-model="torneo.title_en" >
-                            <input  type="text" class="form-control" placeholder="DEUTSCH" required data-ng-model="torneo.title_de" >
                         </div>
                         <div class="form-group">
                             <label for="">Descripción</label>
                             <textarea class="form-control" rows="10" data-ng-model="torneo.description"></textarea>
                             <textarea class="form-control" rows="10" placeholder="ENGLISH" data-ng-model="torneo.description_en"></textarea>
-                            <textarea class="form-control" rows="10" placeholder="DEUTSCH" data-ng-model="torneo.description_de"></textarea>
                         </div>
-                        <div class="form-group">
+                        <!--div class="form-group">
                             <label for="">Tipo</label>
                             <select class="form-control" data-ng-model="torneo.type">
                                 <option value="Taller">Talleres</option>
@@ -31,7 +29,7 @@
                                 <option value="Charlas">Charlas</option>
                                 <option value="Conferencias">Conferencias</option>
                             </select>
-                        </div>
+                        </div-->
 
 
                         <div class="form-group">
@@ -52,7 +50,7 @@
                             <img ng-if="uploading" ng-src="/images/loading.gif" height="300px" class="img-responsive">
                             <img ng-if="torneo.cover_photo" ng-src="http://images.collab-dev.com/300x/smart/slam/{{torneo.cover_photo}}" class="img-rounded img-responsive">
                         </div>
-                        <div class="form-group">
+                        <!--div class="form-group">
                             <label for="">Fecha Evento</label>
                             <input id="torneo_event_date" type="date" class="form-control" required>
                         </div>
@@ -78,12 +76,11 @@
                                     <input  type="number" ng-required="torneo.users_limit == 1" class="form-control" data-ng-pattern="/^[0-9]{1,}$/" data-ng-model="torneo.users_amount" >
                                 </div>
                             </div>
-                        </div>  
+                        </div-->  
                         <div class="form-group">
                             <label for="">Detalles</label>
                             <textarea class="form-control" rows="10" data-ng-model="torneo.rules"></textarea>
                             <textarea class="form-control" rows="10" placeholder="ENGLISH" data-ng-model="torneo.rules_en"></textarea>
-                            <textarea class="form-control" rows="10" placeholder="DEUTSCH" data-ng-model="torneo.rules_de"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -124,7 +121,7 @@
                           mwl-confirm
                           ui-wave
                           title="Atención!"
-                          message="Desea eliminar la actividad?"
+                          message="Desea eliminar el proyecto?"
                           confirm-text="Confirmar"
                           cancel-text="Cancelar"
                           placement="top"

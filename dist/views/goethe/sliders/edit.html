@@ -10,7 +10,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <form name="slider_form" class="form-validation" novalidate data-ng-submit="submitForm()">
-                        <div class="form-group">
+                        <!--div class="form-group">
                             <label for="">Tipo</label>
                             <select name="types" 
                                 class="form-control"
@@ -19,7 +19,7 @@
                                 <option value="QUOTE">Cita</option>
                                 <option value="EVENT">Evento</option>
                             </select>
-                        </div>
+                        </div-->
 
 
                         <div class="form-group">
@@ -41,67 +41,19 @@
                             <img ng-if="slider.cover_photo" ng-src="http://images.collab-dev.com/300x/smart/slam/{{slider.cover_photo}}" class="img-rounded img-responsive">
                         </div>
 
-                        <div class="form-group" ng-if="slider.type != 'QUOTE'">
+                        <div class="form-group">
                             <label for="">Título</label>
                             <textarea class="form-control" rows="10" required data-ng-model="slider.title"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="">Subtitulo</label>
+                            <textarea class="form-control" rows="10" required data-ng-model="slider.subtitle"></textarea>
+                        </div>
 
-                        <div class="form-group" ng-if="slider.type == 'QUOTE'">
-                            <label for="">Texto Cita</label>
+                        <div class="form-group">
+                            <label for="">Detalle</label>
                             <textarea class="form-control" rows="10" required data-ng-model="slider.quote_author"></textarea>
                         </div>
-
-
-                        <div class="form-group" ng-if="slider.type != 'EVENT'">
-                            <label for="" ng-if="slider.type == 'QUOTE'">Autor</label>
-                            <label for="" ng-if="slider.type == 'SIMPLE'">Subtitulo</label>
-                            <textarea class="form-control" rows="5" required data-ng-model="slider.subtitle"></textarea>
-                        </div>
-
-                        <div class="form-group" >
-                            <label for="">Fecha Evento</label>
-                            <input id="slider_event_date" type="date" class="form-control" ng-disabled="slider.type != 'EVENT'">
-                        </div>
-                        <div class="form-group" ng-if="slider.type == 'EVENT'">
-                            <label for="">Lugar Evento</label>
-                            <input  type="text" class="form-control" required data-ng-model="slider.event_place" >
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Acción Registrar</label>
-                                    <md-switch class="md-primary" ng-model="slider.signup_action" aria-label="Accion Registrar" ng-true-value="1" ng-false-value="0"> {{ slider.signup_action== 1 ? 'SI' : 'NO'}} </md-switch>
-                                </div>
-                            </div>
-                        </div>  
-                        <div class="row" ng-if="slider.type == 'EVENT'">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Link Eventos</label>
-                                    <md-switch class="md-primary" ng-model="slider.schedule_action" aria-label="Link Eventos" ng-true-value="1" ng-false-value="0"> {{ slider.schedule_action == 1 ? 'SI' : 'NO'}} </md-switch>
-                                </div>
-                            </div>
-                        </div>  
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Link Más Información</label>
-                                    <md-switch class="md-primary" ng-model="slider.about_action" aria-label="Mas Info" ng-true-value="1" ng-false-value="0"> {{ slider.about_action == 1 ? 'SI' : 'NO'}} </md-switch>
-                                </div>
-                            </div>
-                        </div>  
-
-                        <div class="row" ng-if="slider.type == 'QUOTE'">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Link Jugadores</label>
-                                    <md-switch class="md-primary" ng-model="slider.players_action" aria-label="Jugadores" ng-true-value="1" ng-false-value="0"> {{ slider.players_action == 1 ? 'SI' : 'NO'}} </md-switch>
-                                </div>
-                            </div>
-                        </div>  
-
 
 
                         <button type="submit"
