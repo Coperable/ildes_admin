@@ -14,6 +14,7 @@
                 'goethe/competitions/list',
                 'goethe/users/list',
                 'goethe/participants/list',
+                'goethe/contacts/list'
             ];
 
             setRoutes = function(route) {

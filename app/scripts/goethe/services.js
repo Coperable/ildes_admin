@@ -74,6 +74,13 @@ angular.module('app.services', [])
         }
     });
 }])
+.factory('Contact',['$resource', 'api_host', function($resource, api_host){
+    return $resource(api_host+'/api/contacts/:id', { id:'@id' }, {
+        update: {
+            method: 'PUT'
+        }
+    });
+}])
 .factory('Participant',['$resource', 'api_host', function($resource, api_host){
     return $resource(api_host+'/api/participants/:id', { id:'@id' }, {
         update: {

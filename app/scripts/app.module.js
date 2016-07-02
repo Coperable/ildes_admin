@@ -34,6 +34,7 @@
         ,'app.users'
         ,'app.sliders'
         ,'app.participants'
+        ,'app.contacts'
         ,'app.competitions'
         ,'app.translations'
         ,'app.pages'
