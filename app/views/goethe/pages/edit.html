@@ -1,0 +1,170 @@
+<div class="page page-form">
+    <div class="row ui-section" data-ng-controller="pages-edit">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header" ng-if="page.id">Editando {{page.title}}</h2>
+            <h2 class="section-header" ng-if="!page.id">Nueva Página</h2>
+        </div>
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form name="page_form" class="form-validation" novalidate data-ng-submit="submitForm()">
+                        <div class="form-group">
+                            <label for="">Título</label>
+                            <input  type="text" class="form-control" required data-ng-model="page.title" >
+                        </div>
+
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <strong> ESPAÑOL </strong>
+    </div>
+    <div class="col-md-6 text-center">
+        <strong> ENGLISH</strong>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.somos_main_title" placeholder="SOMOS MAIN TITLE">
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.somos_main_title_en" placeholder="SOMOS MAIN TITLE">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.somos_main" class="form-control" placeholder="SOMOS MAIN"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.somos_main_en" class="form-control" placeholder="SOMOS MAIN"></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.somos_detail_title" placeholder="SOMOS DETAIL TITLE">
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.somos_detail_title_en" placeholder="SOMOS DETAIL TITLE">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.somos_detail" class="form-control" placeholder="SOMOS DETAIL"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.somos_detail_en" class="form-control" placeholder="SOMOS DETAIL"></textarea>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.mision_main_title" placeholder="MISION MAIN TITLE">
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.mision_main_title_en" placeholder="MISION MAIN TITLE">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.mision_main" class="form-control" placeholder="MISION MAIN"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.mision_main_en" class="form-control" placeholder="MISION MAIN"></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.mision_detail_title" placeholder="MISION DETAIL TITLE">
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.mision_detail_title_en" placeholder="MISION DETAIL TITLE">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.mision_detail" class="form-control" placeholder="MISION DETAIL"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.mision_detail_en" class="form-control" placeholder="MISION DETAIL"></textarea>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.hacemos_main_title" placeholder="HACEMOS MAIN TITLE">
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.hacemos_main_title_en" placeholder="HACEMOS MAIN TITLE">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.hacemos_main" class="form-control" placeholder="HACEMOS MAIN"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.hacemos_main_en" class="form-control" placeholder="HACEMOS MAIN"></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.hacemos_detail_title" placeholder="HACEMOS DETAIL TITLE">
+    </div>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" data-ng-model="page.hacemos_detail_title_en" placeholder="HACEMOS DETAIL TITLE">
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.hacemos_detail" class="form-control" placeholder="HACEMOS DETAIL"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+        <textarea ng-model="page.hacemos_detail_en" class="form-control" placeholder="HACEMOS DETAIL"></textarea>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="form-group col-md-6">
+        <textarea class="form-control" ng-model="page.footer_section" placeholder="FOOTER_SECTION"></textarea>
+    </div>
+    <div class="form-group col-md-6">
+        <textarea class="form-control" ng-model="page.footer_section_en" placeholder="FOOTER_SECTION"></textarea>
+    </div>
+</div>
+
+
+                        <div class="form-group">
+                            <label for="">Facebook Link</label>
+                            <input  type="text" class="form-control" data-ng-model="page.facebook_link" >
+                        </div>
+
+
+
+
+
+                        <button type="submit"
+                                ui-wave
+                                class="btn btn-primary btn-w-md"
+                                data-ng-disabled="!canSubmit()"
+                                >Guardar</button>
+                        <button class="btn btn-default btn-w-md"
+                                ui-wave
+                                data-ng-click="revert()"
+                        >Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

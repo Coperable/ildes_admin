@@ -52,14 +52,14 @@
         $scope.submitForm = function() {
             if($scope.participant.id) {
                 $scope.participant.$update(function() {
-                    logger.logSuccess("El orador fue actualizado con éxito!"); 
+                    logger.logSuccess("El miembro fue actualizado con éxito!"); 
                     $location.url('/goethe/participants/list');
                 }).catch(function(response) {
                     logger.logError(response.message); 
                 });
             } else {
                 $scope.participant.$save(function() {
-                    logger.logSuccess("El orador fue creado con éxito!"); 
+                    logger.logSuccess("El miembro fue creado con éxito!"); 
                     $location.url('/goethe/participants/list');
                 }).catch(function(response) {
                     logger.logError(response.message); 
@@ -89,7 +89,7 @@
         $scope.remove = function() {
             if($scope.participant.id) {
                 $scope.participant.$remove(function() {
-                    logger.logSuccess("El orador fue eliminado!"); 
+                    logger.logSuccess("El miembro fue eliminado!"); 
                     $location.url('/goethe/participants/list');
                 }).catch(function(response) {
                     logger.logError(response.message); 

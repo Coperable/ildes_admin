@@ -1,31 +1,22 @@
-<div class="page page-table" data-ng-controller="users-list">
+<div class="page page-table" data-ng-controller="pages-list">
 
     <div class="row ui-section">
         <div class="col-lg-8 clearfix">
-            <h2 class="section-header">Usuarios</h2>
-            <a href="#/user-new" class="btn btn-primary pull-right">Crear</a>
+            <h2 class="section-header">Páginas</h2>
+            <a ui-sref="page-new" class="btn btn-danger pull-right">Crear</a>
         </div>
         <div class="col-md-12">
             <section class="panel panel-default table-dynamic">
 
                 <table class="table table-bordered table-striped table-responsive">
-                    <thead>
-                        <tr>
-                            <th><div class="th">
-                                Username
-                            </div></th>
-                            <th><div class="th">
-                                Apellido - Nombre
-                            </div></th>
-                            <th></th>
-                        </tr>
-                    </thead>
                     <tbody>
-                        <tr data-ng-repeat="user in users">
-                            <td>{{user.username}}</td>
-                            <td>{{user.name}} {{user.lastname}}</td>
-                            <td><span class="btn btn-primary block-center" ng-click="view(user.id)">Ver</span></td>
-                            <!--td><span class="btn btn-default" ng-click="edit(user.id)">Editar</span></td-->
+                        <tr data-ng-repeat="page in pages" style="color:{{page.color}}" >
+                            <td> <img ng-src="http://images.collab-dev.com/100x/smart/aruma/{{page.main_picture}}" class="img-rounded img-responsive"></td>
+                            <td>{{page.title}}</td>
+                            <td>
+                                <!--span class="btn btn-primary" ng-click="view(page.id)">Ver</span-->
+                                <span class="btn btn-default" ng-click="edit(page.id)">Editar</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

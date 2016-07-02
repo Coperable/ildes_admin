@@ -32,6 +32,13 @@ angular.module('app.services', [])
     };
 
 }])
+.factory('Page',['$resource', 'api_host', function($resource, api_host){
+    return $resource(api_host+'/api/pages/:id', { id:'@id' }, {
+        update: {
+            method: 'PUT'
+        }
+    });
+}])
 .factory('Region',['$resource', 'api_host', function($resource, api_host){
     return $resource(api_host+'/api/regions/:id', { id:'@id' }, {
         update: {

@@ -9,11 +9,11 @@
             routes = [
                 'goethe/regions/list',
                 'goethe/sliders/list',
+                'goethe/pages/list',
                 'goethe/translation/list',
                 'goethe/competitions/list',
                 'goethe/users/list',
                 'goethe/participants/list',
-                'goethe/users/edit'
             ];
 
             setRoutes = function(route) {
@@ -66,6 +66,20 @@
                     loginRequired: loginRequired
                 }
             })
+            .state('user-new', {
+                url: '/user-new',
+                templateUrl: 'views/goethe/users/edit.html',
+                resolve: {
+                    loginRequired: loginRequired
+                }
+            })
+            .state('user-edit', {
+                url: '/user-edit/:userId',
+                templateUrl: 'views/goethe/users/edit.html',
+                resolve: {
+                    loginRequired: loginRequired
+                }
+            })
             .state('user-view', {
                 url: '/user-view/:userId',
                 templateUrl: 'views/goethe/users/view.html',
@@ -111,6 +125,13 @@
             .state('translation-edit', {
                 url: '/translation-edit/:translationId',
                 templateUrl: 'views/goethe/translation/edit.html',
+                resolve: {
+                    loginRequired: loginRequired
+                }
+            })
+            .state('page-edit', {
+                url: '/page-edit',
+                templateUrl: 'views/goethe/pages/edit.html',
                 resolve: {
                     loginRequired: loginRequired
                 }
